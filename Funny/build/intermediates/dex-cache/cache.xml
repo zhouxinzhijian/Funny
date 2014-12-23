@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\work\newworkspace1\Funny\libs\android-support-v4.jar"
+        jar="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\libs\android-support-v4.jar"
         jumboMode="false"
         revision="21.1.1"
         sha1="3e4e879d0b3dc11f2feb3f55e77e3b5bd82c4a28">
-        <dex dex="C:\work\newworkspace1\Funny\build\intermediates\pre-dexed\debug\android-support-v4-7009fe3a65f188b24f214b47b52a0ed202912eef.jar" />
+        <dex dex="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\android-support-v4-87d3b1d64afaa8e80d447125b608d9d924d6e843.jar" />
     </item>
 
 </items>

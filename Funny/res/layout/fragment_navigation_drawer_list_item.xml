@@ -1,0 +1,26 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.bruce.funny.NavigationDrawerFragment"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:descendantFocusability= "blocksDescendants">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/navigation_drawer_margin"/>
+
+    <TextView
+        android:id="@+id/describe"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+</LinearLayout>

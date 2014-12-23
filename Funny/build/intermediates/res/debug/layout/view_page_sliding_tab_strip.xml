@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bruce.funny.view.PagerSlidingTabStrip
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:funny="http://schemas.android.com/apk/res/com.bruce.funny"
+    funny:pstsTabPaddingLeftRight="7dp"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+</com.bruce.funny.view.PagerSlidingTabStrip>
+<!-- From: file:/C:/Users/zhouxinzhijian/Documents/GitHubFunny/Funny/Funny/res/layout/view_page_sliding_tab_strip.xml -->

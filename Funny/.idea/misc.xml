@@ -123,9 +123,6 @@
       <Port>5050</Port>
     </configuration>
   </component>
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\zhouxinzhijian\AppData\Roaming\Subversion</configuration>
-  </component>
   <component name="masterDetails">
     <states>
       <state key="Copyright.UI">

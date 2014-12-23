@@ -1,15 +1,15 @@
 package com.bruce.funny;
 
-import android.app.Activity;
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.Fragment;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,9 +17,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation
@@ -55,13 +59,23 @@ public class NavigationDrawerFragment extends Fragment {
     private ListView mDrawerListView;
     private View mFragmentContainerView;
     
-    private int mCurrentSelectedPosition = 0;
+    private int mCurrentSelectedPosition = -1;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
     
     public NavigationDrawerFragment() {
     }
-    
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mCallbacks = (NavigationDrawerCallbacks) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Activity must implement NavigationDrawerCallbacks.");
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,16 +96,9 @@ public class NavigationDrawerFragment extends Fragment {
     }
     
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        // Indicate that this fragment would like to influence the set of
-        // actions in the action bar.
-        setHasOptionsMenu(true);
-    }
-    
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        mDrawerListView = (ListView) rootView.findViewById(R.id.list);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
@@ -99,10 +106,54 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar().getThemedContext(), android.R.layout.simple_list_item_activated_1, android.R.id.text1, new String[] {
-                getString(R.string.title_section1), getString(R.string.title_section2), getString(R.string.title_section3), }));
+        int[] icon = new int[]{
+                R.drawable.ic_drawer_picture_normal,
+                R.drawable.ic_drawer_text_normal,
+                R.drawable.ic_drawer_classify_normal,
+                R.drawable.ic_drawer_collect_normal,
+                R.drawable.ic_drawer_following_normal,
+                R.drawable.ic_drawer_feedback_normal};
+        int[] text = new int[]{
+                R.string.navigation_picture,
+                R.string.navigation_text,
+                R.string.navigation_classify,
+                R.string.navigation_collect,
+                R.string.navigation_following,
+                R.string.navigation_feedback,
+        };
+        ArrayList<Map<String, Object>> maps = new ArrayList<Map<String, Object>>();
+        for(int i = 0 ; i < icon.length; i++){
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("image", icon[i]);
+            map.put("text", getString(text[i]));
+            maps.add(map);
+        }
+        mDrawerListView.setAdapter(new SimpleAdapter(getActivity(),
+                maps,
+                R.layout.fragment_navigation_drawer_list_item,
+                new String[]{"image", "text"},
+                new int[]{R.id.icon, R.id.describe}){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                if (mDrawerListView.getCheckedItemPosition() == position ){
+                    view.setBackgroundResource(R.color.action_bar_indicator_color);
+                }else{
+                    view.setBackgroundResource(android.R.color.transparent);
+                }
+                return view;
+            }
+        });
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        return mDrawerListView;
+        return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        // Indicate that this fragment would like to influence the set of
+        // actions in the action bar.
+        setHasOptionsMenu(true);
     }
     
     public boolean isDrawerOpen() {
@@ -128,6 +179,7 @@ public class NavigationDrawerFragment extends Fragment {
         
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         
         // ActionBarDrawerToggle ties together the the proper interactions
@@ -200,25 +252,38 @@ public class NavigationDrawerFragment extends Fragment {
     }
     
     private void selectItem(int position) {
-        mCurrentSelectedPosition = position;
-        if (mDrawerListView != null) {
-            mDrawerListView.setItemChecked(position, true);
+        if(position == -1){ //For the first time
+            position = 0;
         }
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
         }
-        if (mCallbacks != null) {
-            mCallbacks.onNavigationDrawerItemSelected(position);
-        }
-    }
-    
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mCallbacks = (NavigationDrawerCallbacks) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException("Activity must implement NavigationDrawerCallbacks.");
+        if(mCurrentSelectedPosition != position && position <= 1){
+            if (mDrawerListView != null) {
+                mDrawerListView.setItemChecked(position, true);
+            }
+            if (mCallbacks != null) {
+                mCallbacks.onNavigationDrawerItemSelected(position);
+            }
+            mCurrentSelectedPosition = position;
+        }else{
+            switch (position) {
+                case 2: //classify
+                    Toast.makeText(getActivity(), R.string.navigation_classify, Toast.LENGTH_SHORT).show();
+                    break;
+                case 3: //collect
+                    Toast.makeText(getActivity(), R.string.navigation_collect, Toast.LENGTH_SHORT).show();
+                    break;
+                case 4: //following
+                    Toast.makeText(getActivity(), R.string.navigation_following, Toast.LENGTH_SHORT).show();
+                    break;
+                case 5: //feedback
+                    Toast.makeText(getActivity(), R.string.navigation_feedback, Toast.LENGTH_SHORT).show();
+                    break;
+            }
+            if (mDrawerListView != null) {
+                mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+            }
         }
     }
     
@@ -248,7 +313,7 @@ public class NavigationDrawerFragment extends Fragment {
         // showGlobalContextActionBar, which controls the top-left area of the
         // action bar.
         if (mDrawerLayout != null && isDrawerOpen()) {
-            inflater.inflate(R.menu.global, menu);
+//            inflater.inflate(R.menu.global, menu);
             showGlobalContextActionBar();
         }
         super.onCreateOptionsMenu(menu, inflater);
@@ -276,7 +341,7 @@ public class NavigationDrawerFragment extends Fragment {
     private void showGlobalContextActionBar() {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setTitle(R.string.app_name);
     }
     
