@@ -1,0 +1,2 @@
+C:\work\newworkspace1\Funny\build\intermediates\classes\debug
+C:\work\newworkspace1\Funny\build\intermediates\pre-dexed\debug\android-support-v4-7009fe3a65f188b24f214b47b52a0ed202912eef.jar
