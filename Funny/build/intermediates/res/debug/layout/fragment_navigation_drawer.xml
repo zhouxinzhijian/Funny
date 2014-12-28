@@ -39,14 +39,14 @@
         android:background="@android:color/darker_gray"
         ></View>
 
-    <ListView
+    <com.bruce.funny.view.slide_expandable_listview.SlideExpandableListView
         android:id="@+id/list"
         android:layout_below="@+id/div_line"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:cacheColorHint="@android:color/transparent"
         android:choiceMode="singleChoice"
-        android:listSelector="@drawable/selector_navigation_list_item_bg"
+        android:listSelector="@android:color/transparent"
         android:divider="@android:color/transparent"
         android:fadingEdge="none"
         android:dividerHeight="0dp"

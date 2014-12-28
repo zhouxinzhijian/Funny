@@ -1,0 +1,28 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/filter_item_layout"
+    tools:context="com.bruce.funny.NavigationDrawerFragment"
+    android:descendantFocusability= "afterDescendants">
+
+    <TextView
+        android:id="@+id/filter_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="中国"
+        android:background="@drawable/selector_navigation_list_item_bg"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+
+    <CheckBox
+        android:id="@+id/check_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignParentRight="true"
+        android:text=""/>
+</RelativeLayout><!-- From: file:/C:/Users/zhouxinzhijian/Documents/GitHubFunny/Funny/Funny/res/layout/fragment_navigation_filter_grid_item.xml -->

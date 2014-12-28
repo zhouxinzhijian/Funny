@@ -1,26 +1,49 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.bruce.funny.NavigationDrawerFragment"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:descendantFocusability= "blocksDescendants">
-
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/navigation_drawer_margin"/>
+    android:gravity="right"
+    tools:context="com.bruce.funny.NavigationDrawerFragment">
 
     <TextView
-        android:id="@+id/describe"
-        android:gravity="center_vertical"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
+        android:id="@+id/navigation_type"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_toLeftOf="@+id/div_line"
+        android:text="中国"
+        android:background="@drawable/selector_navigation_list_item_bg"
+        android:padding="@dimen/navigation_drawer_margin"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:clickable="true"
         android:singleLine="true"
         android:ellipsize="end"/>
-</LinearLayout>
+
+    <View
+        android:id="@+id/div_line"
+        android:visibility="gone"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/navigation_type"
+        android:layout_toLeftOf="@+id/classify_filter"
+        android:background="@android:color/darker_gray"
+        ></View>
+
+    <ImageView
+        android:id="@+id/classify_filter"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_navigation_list_item_bg"
+        android:src="@drawable/ic_drawer_classify_normal"
+        android:padding="@dimen/navigation_drawer_margin"/>
+
+    <ViewStub
+        android:id="@+id/filter_gridview_layout"
+        android:layout_below="@+id/navigation_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/view_navigation_gridview" />
+</RelativeLayout>

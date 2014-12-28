@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bruce.funny.view.NavigationGridView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/filter_gridview"
+    android:choiceMode="multipleChoice"
+    android:numColumns="3"
+    android:layout_height="match_parent">
+</com.bruce.funny.view.NavigationGridView>
+<!-- From: file:/C:/Users/zhouxinzhijian/Documents/GitHubFunny/Funny/Funny/res/layout/view_navigation_gridview.xml -->

@@ -136,25 +136,32 @@ containing a value of this type.
         public static final int selector_navigation_list_item_bg=0x7f02000f;
     }
     public static final class id {
-        public static final int action_example=0x7f09000b;
-        public static final int action_settings=0x7f09000a;
+        public static final int action_example=0x7f090010;
+        public static final int action_settings=0x7f09000f;
         public static final int avatar=0x7f090003;
+        public static final int check_id=0x7f09000c;
+        public static final int classify_filter=0x7f090008;
         public static final int container=0x7f090001;
-        public static final int describe=0x7f090008;
         public static final int div_line=0x7f090005;
         public static final int drawer_layout=0x7f090000;
-        public static final int icon=0x7f090007;
+        public static final int filter_gridview=0x7f09000e;
+        public static final int filter_gridview_layout=0x7f090009;
+        public static final int filter_item_layout=0x7f09000a;
+        public static final int filter_text=0x7f09000b;
         public static final int list=0x7f090006;
         public static final int navigation_drawer=0x7f090002;
-        public static final int pager=0x7f090009;
+        public static final int navigation_type=0x7f090007;
+        public static final int pager=0x7f09000d;
         public static final int textView=0x7f090004;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int fragment_navigation_drawer=0x7f030001;
         public static final int fragment_navigation_drawer_list_item=0x7f030002;
-        public static final int fragment_post_container=0x7f030003;
-        public static final int view_page_sliding_tab_strip=0x7f030004;
+        public static final int fragment_navigation_filter_grid_item=0x7f030003;
+        public static final int fragment_post_container=0x7f030004;
+        public static final int view_navigation_gridview=0x7f030005;
+        public static final int view_page_sliding_tab_strip=0x7f030006;
     }
     public static final class menu {
         public static final int global=0x7f080000;

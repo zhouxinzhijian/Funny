@@ -16,14 +16,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
+import android.view.ViewStub;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import com.bruce.funny.view.NavigationGridView;
+import com.bruce.funny.view.slide_expandable_listview.SlideExpandableListView;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation
@@ -56,7 +55,7 @@ public class NavigationDrawerFragment extends Fragment {
     private ActionBarDrawerToggle mDrawerToggle;
     
     private DrawerLayout mDrawerLayout;
-    private ListView mDrawerListView;
+    private SlideExpandableListView mDrawerListView;
     private View mFragmentContainerView;
     
     private int mCurrentSelectedPosition = -1;
@@ -98,14 +97,13 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-        mDrawerListView = (ListView) rootView.findViewById(R.id.list);
-        mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                selectItem(position);
-            }
-        });
+        mDrawerListView = (SlideExpandableListView) rootView.findViewById(R.id.list);
+        mDrawerListView.setAdapter(new NavigationListAdapter(), R.id.classify_filter, R.id.filter_gridview);
+        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+        return rootView;
+    }
+
+    private class NavigationListAdapter extends BaseAdapter{
         int[] icon = new int[]{
                 R.drawable.ic_drawer_picture_normal,
                 R.drawable.ic_drawer_text_normal,
@@ -121,31 +119,90 @@ public class NavigationDrawerFragment extends Fragment {
                 R.string.navigation_following,
                 R.string.navigation_feedback,
         };
-        ArrayList<Map<String, Object>> maps = new ArrayList<Map<String, Object>>();
-        for(int i = 0 ; i < icon.length; i++){
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("image", icon[i]);
-            map.put("text", getString(text[i]));
-            maps.add(map);
+        @Override
+        public int getCount() {
+            return icon.length;
         }
-        mDrawerListView.setAdapter(new SimpleAdapter(getActivity(),
-                maps,
-                R.layout.fragment_navigation_drawer_list_item,
-                new String[]{"image", "text"},
-                new int[]{R.id.icon, R.id.describe}){
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            View rootView = View.inflate(getActivity(), R.layout.fragment_navigation_drawer_list_item, null);
+            TextView navigationTextView = (TextView)rootView.findViewById(R.id.navigation_type);
+            navigationTextView.setText(text[position]);
+            navigationTextView.setCompoundDrawablesWithIntrinsicBounds(icon[position], 0, 0, 0);
+            navigationTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectItem(position);
+                }
+            });
+            if (mDrawerListView.getCheckedItemPosition() == position ){
+                navigationTextView.setBackgroundResource(R.color.action_bar_indicator_color);
+            }else{
+                navigationTextView.setBackgroundResource(android.R.color.transparent);
+            }
+            if(position == 2){
+                rootView.findViewById(R.id.div_line).setVisibility(View.VISIBLE);
+                rootView.findViewById(R.id.classify_filter).setVisibility(View.VISIBLE);
+                ((ViewStub)rootView.findViewById(R.id.filter_gridview_layout)).inflate();
+                NavigationGridView filterGridView = (NavigationGridView)rootView.findViewById(R.id.filter_gridview);
+                filterGridView.setAdapter(new FilterAdapterView());
+            }
+            return rootView;
+        }
+        private class FilterAdapterView extends BaseAdapter{
+            int[] icon = new int[]{
+                    R.drawable.ic_drawer_picture_normal,
+                    R.drawable.ic_drawer_text_normal,
+                    R.drawable.ic_drawer_classify_normal,
+                    R.drawable.ic_drawer_collect_normal,
+                    R.drawable.ic_drawer_following_normal,
+                    R.drawable.ic_drawer_feedback_normal};
+            int[] text = new int[]{
+                    R.string.navigation_picture,
+                    R.string.navigation_text,
+                    R.string.navigation_classify,
+                    R.string.navigation_collect,
+                    R.string.navigation_following,
+                    R.string.navigation_feedback,
+            };
+            @Override
+            public int getCount() {
+                return icon.length;
+            }
+            @Override
+            public Object getItem(int position) {
+                return position;
+            }
+            @Override
+            public long getItemId(int position) {
+                return position;
+            }
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                View view = super.getView(position, convertView, parent);
-                if (mDrawerListView.getCheckedItemPosition() == position ){
-                    view.setBackgroundResource(R.color.action_bar_indicator_color);
-                }else{
-                    view.setBackgroundResource(android.R.color.transparent);
-                }
-                return view;
+                View rootView = View.inflate(getActivity(), R.layout.fragment_navigation_filter_grid_item, null);
+                rootView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //TODO:start a new activity
+                    }
+                });
+                TextView filterText = (TextView) rootView.findViewById(R.id.filter_text);
+                filterText.setText(text[position]);
+                filterText.setCompoundDrawablesWithIntrinsicBounds(0, icon[position], 0, 0);
+                return rootView;
             }
-        });
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        return rootView;
+        }
     }
 
     @Override
