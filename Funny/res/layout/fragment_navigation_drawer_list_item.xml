@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:layout_toLeftOf="@+id/div_line"
+        android:drawablePadding="@dimen/navigation_drawer_margin"
         android:text="中国"
+        android:duplicateParentState="true"
         android:background="@drawable/selector_navigation_list_item_bg"
         android:padding="@dimen/navigation_drawer_margin"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -24,10 +26,10 @@
         android:id="@+id/div_line"
         android:visibility="gone"
         android:layout_width="1dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignBottom="@+id/navigation_type"
         android:layout_toLeftOf="@+id/classify_filter"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/black"
         ></View>
 
     <ImageView

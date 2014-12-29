@@ -42,6 +42,14 @@ public class NavigationGridView extends GridView {
         localPaint.setColor(getContext().getResources().getColor(android.R.color.darker_gray));
         for (int i = 0; i < childCount; i++) {
             View cellView = getChildAt(i);
+
+            if(i / column == 0){//第一行顶部横线
+                canvas.drawLine(cellView.getLeft(), cellView.getTop(), cellView.getRight(), cellView.getTop(), localPaint);
+            }
+            if(i / column == (childCount-1) / column){//最后一行底部横线
+                canvas.drawLine(cellView.getLeft(), cellView.getBottom() - 1, cellView.getRight(), cellView.getBottom() - 1, localPaint);
+            }
+
             if ((i + 1) % column == 0) {//画每一行的最后一列的item，底部的横线
                 if(childCount % column == 0 && (i+1) > ((childCount / column -1)*column)) continue;
                 canvas.drawLine(cellView.getLeft(), cellView.getBottom(), cellView.getRight()+10, cellView.getBottom(),
@@ -56,10 +64,10 @@ public class NavigationGridView extends GridView {
                 }else{
                     bottom = 2;
                 }
-                canvas.drawLine(cellView.getRight(), cellView.getTop()-20, cellView.getRight(), cellView.getBottom()+bottom,
+                canvas.drawLine(cellView.getRight(), cellView.getTop()-20, cellView.getRight(), cellView.getBottom()+bottom,    //竖线
                         localPaint);
                 if(childCount % column == 0 && (i+1) > ((childCount / column -1)*column)) continue;
-                canvas.drawLine(cellView.getLeft(), cellView.getBottom(), cellView.getRight(), cellView.getBottom(),
+                canvas.drawLine(cellView.getLeft(), cellView.getBottom(), cellView.getRight(), cellView.getBottom(),            //横线
                         localPaint);
             }
         }

@@ -1,4 +1,4 @@
-<RelativeLayout
+<com.bruce.funny.view.SquareLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
@@ -12,17 +12,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="中国"
+        android:layout_centerInParent="true"
         android:background="@drawable/selector_navigation_list_item_bg"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:singleLine="true"
+        android:drawablePadding="5dp"
         android:ellipsize="end"/>
 
     <CheckBox
         android:id="@+id/check_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:padding="10dp"
-        android:layout_alignParentRight="true"
         android:text=""/>
-</RelativeLayout><!-- From: file:/C:/Users/zhouxinzhijian/Documents/GitHubFunny/Funny/Funny/res/layout/fragment_navigation_filter_grid_item.xml -->
+</com.bruce.funny.view.SquareLayout><!-- From: file:/C:/Users/zhouxinzhijian/Documents/GitHubFunny/Funny/Funny/res/layout/fragment_navigation_filter_grid_item.xml -->

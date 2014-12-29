@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import java.util.BitSet;
 
@@ -291,7 +291,7 @@ public abstract class AbstractSlideExpandableListAdapter extends WrapperListAdap
 
 	private void updateExpandable(View target, int position) {
 
-		final LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)target.getLayoutParams();
+		final RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)target.getLayoutParams();
 		if(openItems.get(position)) {
 			target.setVisibility(View.VISIBLE);
 			params.bottomMargin = 0;

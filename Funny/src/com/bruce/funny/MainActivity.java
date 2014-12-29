@@ -69,6 +69,9 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
             break;
             case 1:
             mTitle = getString(R.string.navigation_text);
+                break;
+            case 2:
+                mTitle = getString(R.string.navigation_classify);
             break;
         }
     }
