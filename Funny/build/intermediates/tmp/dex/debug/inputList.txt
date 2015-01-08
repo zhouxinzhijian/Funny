@@ -1,2 +1,0 @@
-C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\classes\debug
-C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\android-support-v4-87d3b1d64afaa8e80d447125b608d9d924d6e843.jar

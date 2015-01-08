@@ -1,9 +1,8 @@
-package com.bruce.funny;
+package com.bruce.funny.activity;
 
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.util.SparseArray;
@@ -12,9 +11,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
+import com.bruce.funny.Config;
+import com.bruce.funny.R;
 import com.bruce.funny.view.PagerSlidingTabStrip;
+import com.umeng.analytics.MobclickAgent;
 
-public class MainActivity extends FragmentActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends TJFragmentActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     
     /**
      * Fragment managing the behaviors, interactions and presentation of the
@@ -32,9 +34,13 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MobclickAgent.updateOnlineConfig( mActivity );
+        MobclickAgent.setDebugMode(Config.debug);
+        MobclickAgent.openActivityDurationTrack(false);
+
         setContentView(R.layout.activity_main);
         
-        mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
         PagerSlidingTabStrip mPagerSlidingTabStrip = (PagerSlidingTabStrip) getLayoutInflater().inflate(R.layout.view_page_sliding_tab_strip, null);
@@ -86,7 +92,7 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            // Only show items in the action bar relevant to this screen
+            // Only show items in the action bar relevant to mActivity screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
 //            getMenuInflater().inflate(R.menu.main, menu);
@@ -106,5 +112,17 @@ public class MainActivity extends FragmentActivity implements NavigationDrawerFr
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(mActivity);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(mActivity);
     }
 }

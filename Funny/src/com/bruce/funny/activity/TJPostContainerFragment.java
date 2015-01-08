@@ -1,4 +1,4 @@
-package com.bruce.funny;
+package com.bruce.funny.activity;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -14,12 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bruce.funny.R;
 import com.bruce.funny.view.PagerSlidingTabStrip;
 
 /**
  * Created by zhouxinzhijian on 2014/12/21.
  */
-public class TJPostContainerFragment extends Fragment {
+public class TJPostContainerFragment extends TJFragment {
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -47,7 +48,7 @@ public class TJPostContainerFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ((MainActivity) getActivity()).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
+        ((MainActivity) mActivity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
         View rootView = inflater.inflate(R.layout.fragment_post_container, container, false);
         return rootView;
     }
@@ -57,7 +58,7 @@ public class TJPostContainerFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         ViewPager mViewPager = (ViewPager) getView().findViewById(R.id.pager);
         mViewPager.setAdapter(new PostViewPagerAdapter(getChildFragmentManager()));
-        PagerSlidingTabStrip mPagerSlidingTabStrip = (PagerSlidingTabStrip)getActivity().getActionBar().getCustomView();
+        PagerSlidingTabStrip mPagerSlidingTabStrip = (PagerSlidingTabStrip)mActivity.getActionBar().getCustomView();
         mPagerSlidingTabStrip.setViewPager(mViewPager);
         setPagerSlidingTabStripValue(mPagerSlidingTabStrip);
     }

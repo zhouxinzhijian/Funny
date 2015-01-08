@@ -1,7 +1,6 @@
-package com.bruce.funny;
+package com.bruce.funny.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -12,15 +11,15 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView;
 
-public class TJPostFragment extends Fragment {
+public class TJPostFragment extends TJFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        FrameLayout fl = new FrameLayout(getActivity());
+        FrameLayout fl = new FrameLayout(mActivity);
         fl.setLayoutParams(params);
         DisplayMetrics dm = getResources().getDisplayMetrics();
         final int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, dm);
-        TextView v = new TextView(getActivity());
+        TextView v = new TextView(mActivity);
         params.setMargins(margin, margin, margin, margin);
         v.setLayoutParams(params);
         v.setLayoutParams(params);

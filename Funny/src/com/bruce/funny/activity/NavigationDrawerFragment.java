@@ -1,8 +1,7 @@
-package com.bruce.funny;
+package com.bruce.funny.activity;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -24,6 +23,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bruce.funny.R;
 import com.bruce.funny.view.NavigationGridView;
 import com.bruce.funny.view.slide_expandable_listview.SlideExpandableListView;
 
@@ -37,7 +37,7 @@ import java.util.Set;
  * > design guidelines</a> for a complete explanation of the behaviors
  * implemented here.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends TJFragment {
     
     /**
      * Remember the position of the selected item.
@@ -90,7 +90,7 @@ public class NavigationDrawerFragment extends Fragment {
         // Read in the flag indicating whether or not the user has demonstrated
         // awareness of the
         // drawer. See PREF_USER_LEARNED_DRAWER for details.
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mActivity);
         mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
 
         if (savedInstanceState != null) {
@@ -156,7 +156,7 @@ public class NavigationDrawerFragment extends Fragment {
         public View getView(final int position, View convertView, ViewGroup parent) {
             TextView navigationTextView;
             if(convertView == null){
-                View rootView = View.inflate(getActivity(), R.layout.fragment_navigation_drawer_list_item, null);
+                View rootView = View.inflate(mActivity, R.layout.fragment_navigation_drawer_list_item, null);
                 navigationTextView = (TextView)rootView.findViewById(R.id.navigation_type);
                 navigationTextView.setText(text[position]);
                 navigationTextView.setCompoundDrawablesWithIntrinsicBounds(icon[position], 0, 0, 0);
@@ -172,7 +172,7 @@ public class NavigationDrawerFragment extends Fragment {
                     ((ViewStub)rootView.findViewById(R.id.filter_gridview_layout)).inflate();
                     NavigationGridView filterGridView = (NavigationGridView)rootView.findViewById(R.id.filter_gridview);
                     filterGridView.setAdapter(new FilterAdapterView(filterGridView));
-                    Set<String> stringSet = PreferenceManager.getDefaultSharedPreferences(getActivity()).getStringSet(PREF_CHECKED_GRIDVIEW_POSITION, null);
+                    Set<String> stringSet = PreferenceManager.getDefaultSharedPreferences(mActivity).getStringSet(PREF_CHECKED_GRIDVIEW_POSITION, null);
                     if(stringSet != null){
                         for(String str : stringSet){
                             filterGridView.setItemChecked(Integer.valueOf(str), true);
@@ -225,12 +225,12 @@ public class NavigationDrawerFragment extends Fragment {
             }
             @Override
             public View getView(final int position, View convertView, ViewGroup parent) {
-                View rootView = View.inflate(getActivity(), R.layout.fragment_navigation_filter_grid_item, null);
+                View rootView = View.inflate(mActivity, R.layout.fragment_navigation_filter_grid_item, null);
                 rootView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //TODO:start a new activity
-                        Toast.makeText(getActivity(), "点击详细分类", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mActivity, "点击详细分类", Toast.LENGTH_SHORT).show();
                     }
                 });
                 CheckBox checkBox = (CheckBox) rootView.findViewById(R.id.check_id);
@@ -239,7 +239,7 @@ public class NavigationDrawerFragment extends Fragment {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         mGridView.setItemChecked(position, isChecked);
-                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
                         Set<String> stringSet = preferences.getStringSet(PREF_CHECKED_GRIDVIEW_POSITION, new HashSet<String>());
                         if(isChecked){
                             stringSet.add(String.valueOf(position));
@@ -278,7 +278,7 @@ public class NavigationDrawerFragment extends Fragment {
      * @param drawerLayout The DrawerLayout containing this fragment's UI.
      */
     public void setUp(int fragmentId, DrawerLayout drawerLayout) {
-        mFragmentContainerView = getActivity().findViewById(fragmentId);
+        mFragmentContainerView = mActivity.findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
         
         // set a custom shadow that overlays the main content when the drawer
@@ -293,7 +293,7 @@ public class NavigationDrawerFragment extends Fragment {
         
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the navigation drawer and the action bar app icon.
-        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), /*
+        mDrawerToggle = new ActionBarDrawerToggle(mActivity, /*
                                                                   * host
                                                                   * Activity
                                                                   */
@@ -316,7 +316,7 @@ public class NavigationDrawerFragment extends Fragment {
                     return;
                 }
                 
-                getActivity().invalidateOptionsMenu(); // calls
+                mActivity.invalidateOptionsMenu(); // calls
                                                        // onPrepareOptionsMenu()
             }
             
@@ -332,11 +332,11 @@ public class NavigationDrawerFragment extends Fragment {
                     // prevent auto-showing
                     // the navigation drawer automatically in the future.
                     mUserLearnedDrawer = true;
-                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mActivity);
                     sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
                 }
                 
-                getActivity().invalidateOptionsMenu(); // calls
+                mActivity.invalidateOptionsMenu(); // calls
                                                        // onPrepareOptionsMenu()
             }
         };
@@ -378,13 +378,13 @@ public class NavigationDrawerFragment extends Fragment {
         }else{
             switch (position) {
                 case 3: //collect
-                    Toast.makeText(getActivity(), R.string.navigation_collect, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mActivity, R.string.navigation_collect, Toast.LENGTH_SHORT).show();
                     break;
                 case 4: //following
-                    Toast.makeText(getActivity(), R.string.navigation_following, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mActivity, R.string.navigation_following, Toast.LENGTH_SHORT).show();
                     break;
                 case 5: //feedback
-                    Toast.makeText(getActivity(), R.string.navigation_feedback, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mActivity, R.string.navigation_feedback, Toast.LENGTH_SHORT).show();
                     break;
             }
             if (mDrawerListView != null) {
@@ -432,7 +432,7 @@ public class NavigationDrawerFragment extends Fragment {
         }
         
         if (item.getItemId() == R.id.action_example) {
-            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mActivity, "Example action.", Toast.LENGTH_SHORT).show();
             return true;
         }
         
@@ -452,7 +452,7 @@ public class NavigationDrawerFragment extends Fragment {
     }
     
     private ActionBar getActionBar() {
-        return getActivity().getActionBar();
+        return mActivity.getActionBar();
     }
     
     /**
