@@ -1,0 +1,5 @@
+C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\classes\debug
+C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\classes-d7e034c0cd65273084891a4c2d0c4d4b7423ee10.jar
+C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\umeng-fb-v4.3.2-14235a8e35a7d11a1b0950348b67951ff78cdb60.jar
+C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-7dd6a034d084670f3656af83aa4ffb6fefd37381.jar
+C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\support-v4-19.0.1-dc64ce4a3cca2f5b2bf8f91b8ba537309ed2fb74.jar

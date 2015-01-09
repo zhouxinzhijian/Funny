@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\work\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd">
+        <dex dex="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\support-v4-19.0.1-dc64ce4a3cca2f5b2bf8f91b8ba537309ed2fb74.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\libs\umeng-fb-v4.3.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="26de25c95d3353d71406e65bb64e4b67fae707e0">
+        <dex dex="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\umeng-fb-v4.3.2-14235a8e35a7d11a1b0950348b67951ff78cdb60.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\libs\umeng-analytics-v5.2.4.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0f9eccf79ae6006e4346725b09114182dca0c023">
+        <dex dex="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-7dd6a034d084670f3656af83aa4ffb6fefd37381.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\exploded-aar\Funny\library\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="d6d1879b076a9a5517eb480990eacb392bb3a887">
+        <dex dex="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\classes-d7e034c0cd65273084891a4c2d0c4d4b7423ee10.jar" />
+    </item>
+
+</items>

@@ -3,6 +3,7 @@
     <!-- From: file:/C:/Users/zhouxinzhijian/Documents/GitHubFunny/Funny/Funny/res/values-v11/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowAnimationStyle">@style/Animation.Activity.Translucent.Style</item>
         <!-- API 11 theme customizations can go here. -->
     </style>
 </resources>

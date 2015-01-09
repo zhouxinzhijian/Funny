@@ -2,6 +2,7 @@ package com.bruce.funny.activity;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -191,7 +192,7 @@ public class NavigationDrawerFragment extends TJFragment {
             }
             return convertView;
         }
-        private class FilterAdapterView extends BaseAdapter{
+        private class FilterAdapterView extends BaseAdapter implements View.OnClickListener{
             int[] icon = new int[]{
                     R.drawable.ic_drawer_picture_normal,
                     R.drawable.ic_drawer_text_normal,
@@ -226,13 +227,8 @@ public class NavigationDrawerFragment extends TJFragment {
             @Override
             public View getView(final int position, View convertView, ViewGroup parent) {
                 View rootView = View.inflate(mActivity, R.layout.fragment_navigation_filter_grid_item, null);
-                rootView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //TODO:start a new activity
-                        Toast.makeText(mActivity, "点击详细分类", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                rootView.setOnClickListener(this);
+                rootView.setTag(text[position]);
                 CheckBox checkBox = (CheckBox) rootView.findViewById(R.id.check_id);
                 checkBox.setChecked(mGridView.getCheckedItemPositions().get(position));
                 checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -253,6 +249,16 @@ public class NavigationDrawerFragment extends TJFragment {
                 filterText.setText(text[position]);
                 filterText.setCompoundDrawablesWithIntrinsicBounds(0, icon[position], 0, 0);
                 return rootView;
+            }
+
+            @Override
+            public void onClick(View v){
+                switch ((Integer)v.getTag()){
+                    //TODO:
+                    default:
+                        Toast.makeText(mActivity, (Integer)v.getTag(), Toast.LENGTH_SHORT).show();
+                        break;
+                }
             }
         }
     }
@@ -364,7 +370,7 @@ public class NavigationDrawerFragment extends TJFragment {
         if(position == -1){ //For the first time
             position = 0;
         }
-        if (mDrawerLayout != null) {
+        if (mDrawerLayout != null && position <= 2) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
         }
         if(mCurrentSelectedPosition != position && position <= 2){
@@ -384,7 +390,7 @@ public class NavigationDrawerFragment extends TJFragment {
                     Toast.makeText(mActivity, R.string.navigation_following, Toast.LENGTH_SHORT).show();
                     break;
                 case 5: //feedback
-                    Toast.makeText(mActivity, R.string.navigation_feedback, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(mActivity, TJFeedBackActivity.class));
                     break;
             }
             if (mDrawerListView != null) {

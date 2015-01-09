@@ -10,11 +10,16 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
+        <item name="android:windowAnimationStyle">@style/Animation.Activity.Translucent.Style</item>
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="SwipeBackActivityTheme" parent="AppBaseTheme">
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <style name="Animation.Activity.Translucent.Style" parent="@android:style/Animation.Translucent" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/activity_open_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/activity_close_exit_anim</item>
+    </style>
 </resources>

@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
-import com.bruce.funny.Config;
 import com.bruce.funny.R;
 import com.bruce.funny.view.PagerSlidingTabStrip;
 import com.umeng.analytics.MobclickAgent;
@@ -34,9 +33,6 @@ public class MainActivity extends TJFragmentActivity implements NavigationDrawer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MobclickAgent.updateOnlineConfig( mActivity );
-        MobclickAgent.setDebugMode(Config.debug);
-        MobclickAgent.openActivityDurationTrack(false);
 
         setContentView(R.layout.activity_main);
         

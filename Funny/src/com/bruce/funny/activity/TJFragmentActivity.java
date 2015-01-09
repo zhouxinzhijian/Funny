@@ -10,6 +10,10 @@ import com.umeng.analytics.MobclickAgent;
  */
 public class TJFragmentActivity extends FragmentActivity{
     public FragmentActivity mActivity;
+    private boolean mIncludeFragment;
+    public void setIncludeFragment(boolean includeFragment){
+        mIncludeFragment = includeFragment;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +24,18 @@ public class TJFragmentActivity extends FragmentActivity{
     @Override
     protected void onResume() {
         super.onResume();
+        if(!mIncludeFragment){
+            MobclickAgent.onPageStart(mActivity.getClass().getName()); //统计页面
+        }
         MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        if(!mIncludeFragment){
+            MobclickAgent.onPageEnd(mActivity.getClass().getName());
+        }
         MobclickAgent.onPause(this);
     }
 }

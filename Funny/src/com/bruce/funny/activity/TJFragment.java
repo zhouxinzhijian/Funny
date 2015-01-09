@@ -24,8 +24,8 @@ public class TJFragment extends Fragment{
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onPause() {
+        super.onPause();
         MobclickAgent.onPageEnd(getClass().getName());
     }
 }

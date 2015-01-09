@@ -3,7 +3,6 @@ package com.bruce.funny.activity;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -54,7 +53,7 @@ public class TJPostContainerFragment extends TJFragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ViewPager mViewPager = (ViewPager) getView().findViewById(R.id.pager);
         mViewPager.setAdapter(new PostViewPagerAdapter(getChildFragmentManager()));

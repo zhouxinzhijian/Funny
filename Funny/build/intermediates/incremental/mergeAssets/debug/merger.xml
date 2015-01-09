@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\assets"/></dataSet><dataSet config="debug"><source path="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build-types\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="unspecified"><source path="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\exploded-aar\Funny\library\unspecified\assets"/></dataSet><dataSet config="main"><source path="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\assets"/></dataSet><dataSet config="debug"><source path="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build-types\debug\assets"/></dataSet></merger>
