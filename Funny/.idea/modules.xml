@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Funny.iml" filepath="$PROJECT_DIR$/Funny.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/SwipeBackLibrary.iml" filepath="$PROJECT_DIR$/library/SwipeBackLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ptr-lib/ptr-lib.iml" filepath="$PROJECT_DIR$/ptr-lib/ptr-lib.iml" />
     </modules>
   </component>
 </project>
