@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333">
+
+    <in.srain.cube.views.ptr.PtrFrameLayout
+        android:id="@+id/store_house_ptr_frame"
+        xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        cube_ptr:ptr_duration_to_close="300"
+        cube_ptr:ptr_duration_to_close_header="2000"
+        cube_ptr:ptr_keep_header_when_refresh="true"
+        cube_ptr:ptr_pull_to_fresh="false"
+        cube_ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+        cube_ptr:ptr_resistance="1.7">
+
+        <com.bruce.funny.widget.XListView
+            android:id="@+id/listview"
+            android:cacheColorHint="@null"
+            android:fadingEdge="none"
+            android:divider="@null"
+            android:listSelector="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            </com.bruce.funny.widget.XListView>
+
+    </in.srain.cube.views.ptr.PtrFrameLayout>
+</RelativeLayout><!-- From: file:/C:/Users/zhouxinzhijian/Documents/GitHubFunny/Funny/Funny/res/layout/fragment_post_list.xml -->

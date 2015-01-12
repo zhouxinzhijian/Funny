@@ -2,6 +2,20 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\exploded-aar\Funny\ptr-lib\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4fa1250df4c251041b0a1407df8676e80f69f501">
+        <dex dex="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\classes-83905b079ca8ab818a8bcd45044ea51687378067.jar" />
+    </item>
+    <item
+        jar="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\exploded-aar\Funny\ptr-lib\unspecified\libs\clog-1.0.2.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b857e5d62a7243e74fd0307639fff5a54f8f030">
+        <dex dex="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\clog-1.0.2-76019b21f9f642dc61e93109096060d1b37b0670.jar" />
+    </item>
+    <item
         jar="C:\work\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
         jumboMode="false"
         revision="21.1.1"
@@ -26,7 +40,7 @@
         jar="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\exploded-aar\Funny\library\unspecified\classes.jar"
         jumboMode="false"
         revision="21.1.1"
-        sha1="d6d1879b076a9a5517eb480990eacb392bb3a887">
+        sha1="82bd3e3742dae54a1c833cb2ac620f1026b450e5">
         <dex dex="C:\Users\zhouxinzhijian\Documents\GitHubFunny\Funny\Funny\build\intermediates\pre-dexed\debug\classes-d7e034c0cd65273084891a4c2d0c4d4b7423ee10.jar" />
     </item>
 

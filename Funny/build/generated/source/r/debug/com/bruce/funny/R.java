@@ -29,7 +29,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>all</code></td><td>3</td><td></td></tr>
 </table>
          */
-        public static final int edge_flag=0x7f01000d;
+        public static final int edge_flag=0x7f010016;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -39,7 +39,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int edge_size=0x7f01000c;
+        public static final int edge_size=0x7f010015;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -140,15 +140,79 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int shadow_bottom=0x7f010010;
+        public static final int ptr_content=0x7f01000e;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ptr_duration_to_close=0x7f010011;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ptr_duration_to_close_header=0x7f010012;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int shadow_left=0x7f01000e;
+        public static final int ptr_header=0x7f01000d;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ptr_keep_header_when_refresh=0x7f010014;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ptr_pull_to_fresh=0x7f010013;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ptr_ratio_of_header_height_to_refresh=0x7f010010;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ptr_resistance=0x7f01000f;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ptr_rotate_ani_time=0x7f01000c;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int shadow_right=0x7f01000f;
+        public static final int shadow_bottom=0x7f010019;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int shadow_left=0x7f010017;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int shadow_right=0x7f010018;
     }
     public static final class color {
         public static final int action_bar_indicator_color=0x7f050000;
@@ -174,57 +238,79 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_tab_hot_normal=0x7f02000a;
         public static final int ic_tab_trending_active=0x7f02000b;
         public static final int ic_tab_trending_normal=0x7f02000c;
-        public static final int selector_ab_ic_hot=0x7f02000d;
-        public static final int selector_ab_ic_new=0x7f02000e;
-        public static final int selector_navigation_list_item_bg=0x7f02000f;
-        public static final int shadow_bottom=0x7f020010;
-        public static final int shadow_left=0x7f020011;
-        public static final int shadow_right=0x7f020012;
-        public static final int umeng_fb_reply_left_bg=0x7f020013;
-        public static final int umeng_fb_reply_right_bg=0x7f020014;
+        public static final int ptr_rotate_arrow=0x7f02000d;
+        public static final int selector_ab_ic_hot=0x7f02000e;
+        public static final int selector_ab_ic_new=0x7f02000f;
+        public static final int selector_navigation_list_item_bg=0x7f020010;
+        public static final int shadow_bottom=0x7f020011;
+        public static final int shadow_left=0x7f020012;
+        public static final int shadow_right=0x7f020013;
+        public static final int umeng_fb_reply_left_bg=0x7f020014;
+        public static final int umeng_fb_reply_right_bg=0x7f020015;
     }
     public static final class id {
-        public static final int action_example=0x7f0a001b;
-        public static final int action_settings=0x7f0a001a;
+        public static final int action_example=0x7f0a002b;
+        public static final int action_settings=0x7f0a002a;
         public static final int all=0x7f0a0000;
-        public static final int avatar=0x7f0a0007;
+        public static final int avatar=0x7f0a000c;
         public static final int bottom=0x7f0a0001;
-        public static final int check_id=0x7f0a0010;
-        public static final int classify_filter=0x7f0a000c;
+        public static final int check_id=0x7f0a0015;
+        public static final int classify_filter=0x7f0a0011;
         public static final int container=0x7f0a0005;
-        public static final int div_line=0x7f0a0009;
+        public static final int div_line=0x7f0a000e;
         public static final int drawer_layout=0x7f0a0004;
-        public static final int filter_gridview=0x7f0a0019;
-        public static final int filter_gridview_layout=0x7f0a000d;
-        public static final int filter_item_layout=0x7f0a000e;
-        public static final int filter_text=0x7f0a000f;
+        public static final int filter_gridview=0x7f0a0020;
+        public static final int filter_gridview_layout=0x7f0a0012;
+        public static final int filter_item_layout=0x7f0a0013;
+        public static final int filter_text=0x7f0a0014;
         public static final int left=0x7f0a0002;
-        public static final int list=0x7f0a000a;
+        public static final int list=0x7f0a000f;
+        public static final int listview=0x7f0a0018;
         public static final int navigation_drawer=0x7f0a0006;
-        public static final int navigation_type=0x7f0a000b;
-        public static final int pager=0x7f0a0011;
+        public static final int navigation_type=0x7f0a0010;
+        public static final int pager=0x7f0a0016;
+        public static final int ptr_classic_header_rotate_view=0x7f0a000a;
+        public static final int ptr_classic_header_rotate_view_header_last_update=0x7f0a0009;
+        public static final int ptr_classic_header_rotate_view_header_text=0x7f0a0007;
+        public static final int ptr_classic_header_rotate_view_header_title=0x7f0a0008;
+        public static final int ptr_classic_header_rotate_view_progressbar=0x7f0a000b;
         public static final int right=0x7f0a0003;
-        public static final int swipe=0x7f0a0012;
-        public static final int textView=0x7f0a0008;
-        public static final int umeng_fb_list_reply_header=0x7f0a0017;
-        public static final int umeng_fb_reply_content=0x7f0a0015;
-        public static final int umeng_fb_reply_content_wrapper=0x7f0a0014;
-        public static final int umeng_fb_reply_date=0x7f0a0018;
-        public static final int umeng_fb_reply_list=0x7f0a0013;
-        public static final int umeng_fb_send=0x7f0a0016;
+        public static final int store_house_ptr_frame=0x7f0a0017;
+        public static final int swipe=0x7f0a0019;
+        public static final int textView=0x7f0a000d;
+        public static final int umeng_fb_list_reply_header=0x7f0a001e;
+        public static final int umeng_fb_reply_content=0x7f0a001c;
+        public static final int umeng_fb_reply_content_wrapper=0x7f0a001b;
+        public static final int umeng_fb_reply_date=0x7f0a001f;
+        public static final int umeng_fb_reply_list=0x7f0a001a;
+        public static final int umeng_fb_send=0x7f0a001d;
+        public static final int xlistview_footer_content=0x7f0a0021;
+        public static final int xlistview_footer_hint_textview=0x7f0a0023;
+        public static final int xlistview_footer_progressbar=0x7f0a0022;
+        public static final int xlistview_header_arrow=0x7f0a0028;
+        public static final int xlistview_header_content=0x7f0a0024;
+        public static final int xlistview_header_hint_textview=0x7f0a0026;
+        public static final int xlistview_header_progressbar=0x7f0a0029;
+        public static final int xlistview_header_text=0x7f0a0025;
+        public static final int xlistview_header_time=0x7f0a0027;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_welcome=0x7f030001;
-        public static final int fragment_navigation_drawer=0x7f030002;
-        public static final int fragment_navigation_drawer_list_item=0x7f030003;
-        public static final int fragment_navigation_filter_grid_item=0x7f030004;
-        public static final int fragment_post_container=0x7f030005;
-        public static final int swipeback_layout=0x7f030006;
-        public static final int umeng_fb_activity_conversation=0x7f030007;
-        public static final int umeng_fb_list_item=0x7f030008;
-        public static final int view_navigation_gridview=0x7f030009;
-        public static final int view_page_sliding_tab_strip=0x7f03000a;
+        public static final int cube_ptr_classic_default_header=0x7f030002;
+        public static final int cube_ptr_simple_loading=0x7f030003;
+        public static final int fragment_navigation_drawer=0x7f030004;
+        public static final int fragment_navigation_drawer_list_item=0x7f030005;
+        public static final int fragment_navigation_filter_grid_item=0x7f030006;
+        public static final int fragment_post_container=0x7f030007;
+        public static final int fragment_post_list=0x7f030008;
+        public static final int swipeback_layout=0x7f030009;
+        public static final int umeng_fb_activity_conversation=0x7f03000a;
+        public static final int umeng_fb_list_item=0x7f03000b;
+        public static final int view_navigation_gridview=0x7f03000c;
+        public static final int view_page_sliding_tab_strip=0x7f03000d;
+        public static final int xlistview_footer=0x7f03000e;
+        public static final int xlistview_header=0x7f03000f;
     }
     public static final class menu {
         public static final int global=0x7f090000;
@@ -235,18 +321,33 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int action_bar_tab_hot=0x7f070001;
         public static final int action_bar_tab_new=0x7f070002;
         public static final int app_name=0x7f070003;
-        public static final int feedback_reply_date_default=0x7f070004;
-        public static final int feedback_reply_empty_prompt=0x7f070005;
-        public static final int feedback_reply_send=0x7f070006;
-        public static final int navigation_classify=0x7f070007;
-        public static final int navigation_collect=0x7f070008;
-        public static final int navigation_drawer_close=0x7f070009;
-        public static final int navigation_drawer_open=0x7f07000a;
-        public static final int navigation_feedback=0x7f07000b;
-        public static final int navigation_following=0x7f07000c;
-        public static final int navigation_picture=0x7f07000d;
-        public static final int navigation_text=0x7f07000e;
-        public static final int welcome_text=0x7f07000f;
+        public static final int cube_ptr_hours_ago=0x7f070004;
+        public static final int cube_ptr_last_update=0x7f070005;
+        public static final int cube_ptr_minutes_ago=0x7f070006;
+        public static final int cube_ptr_pull_down=0x7f070007;
+        public static final int cube_ptr_pull_down_to_refresh=0x7f070008;
+        public static final int cube_ptr_refresh_complete=0x7f070009;
+        public static final int cube_ptr_refreshing=0x7f07000a;
+        public static final int cube_ptr_release_to_refresh=0x7f07000b;
+        public static final int cube_ptr_seconds_ago=0x7f07000c;
+        public static final int feedback_reply_date_default=0x7f07000d;
+        public static final int feedback_reply_empty_prompt=0x7f07000e;
+        public static final int feedback_reply_send=0x7f07000f;
+        public static final int navigation_classify=0x7f070010;
+        public static final int navigation_collect=0x7f070011;
+        public static final int navigation_drawer_close=0x7f070012;
+        public static final int navigation_drawer_open=0x7f070013;
+        public static final int navigation_feedback=0x7f070014;
+        public static final int navigation_following=0x7f070015;
+        public static final int navigation_picture=0x7f070016;
+        public static final int navigation_text=0x7f070017;
+        public static final int welcome_text=0x7f070018;
+        public static final int xlistview_footer_hint_normal=0x7f070019;
+        public static final int xlistview_footer_hint_ready=0x7f07001a;
+        public static final int xlistview_header_hint_loading=0x7f07001b;
+        public static final int xlistview_header_hint_normal=0x7f07001c;
+        public static final int xlistview_header_hint_ready=0x7f07001d;
+        public static final int xlistview_header_last_time=0x7f07001e;
     }
     public static final class style {
         public static final int Animation_Activity_Translucent_Style=0x7f080000;
@@ -456,6 +557,165 @@ containing a value of this type.
           @attr name com.bruce.funny:pstsUnderlineHeight
         */
         public static final int PagerSlidingTabStrip_pstsUnderlineHeight = 4;
+        /** Attributes that can be used with a PtrClassicHeader.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PtrClassicHeader_ptr_rotate_ani_time com.bruce.funny:ptr_rotate_ani_time}</code></td><td></td></tr>
+           </table>
+           @see #PtrClassicHeader_ptr_rotate_ani_time
+         */
+        public static final int[] PtrClassicHeader = {
+            0x7f01000c
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_rotate_ani_time}
+          attribute's value can be found in the {@link #PtrClassicHeader} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.bruce.funny:ptr_rotate_ani_time
+        */
+        public static final int PtrClassicHeader_ptr_rotate_ani_time = 0;
+        /** Attributes that can be used with a PtrFrameLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #PtrFrameLayout_ptr_content com.bruce.funny:ptr_content}</code></td><td></td></tr>
+           <tr><td><code>{@link #PtrFrameLayout_ptr_duration_to_close com.bruce.funny:ptr_duration_to_close}</code></td><td></td></tr>
+           <tr><td><code>{@link #PtrFrameLayout_ptr_duration_to_close_header com.bruce.funny:ptr_duration_to_close_header}</code></td><td></td></tr>
+           <tr><td><code>{@link #PtrFrameLayout_ptr_header com.bruce.funny:ptr_header}</code></td><td></td></tr>
+           <tr><td><code>{@link #PtrFrameLayout_ptr_keep_header_when_refresh com.bruce.funny:ptr_keep_header_when_refresh}</code></td><td></td></tr>
+           <tr><td><code>{@link #PtrFrameLayout_ptr_pull_to_fresh com.bruce.funny:ptr_pull_to_fresh}</code></td><td></td></tr>
+           <tr><td><code>{@link #PtrFrameLayout_ptr_ratio_of_header_height_to_refresh com.bruce.funny:ptr_ratio_of_header_height_to_refresh}</code></td><td></td></tr>
+           <tr><td><code>{@link #PtrFrameLayout_ptr_resistance com.bruce.funny:ptr_resistance}</code></td><td></td></tr>
+           </table>
+           @see #PtrFrameLayout_ptr_content
+           @see #PtrFrameLayout_ptr_duration_to_close
+           @see #PtrFrameLayout_ptr_duration_to_close_header
+           @see #PtrFrameLayout_ptr_header
+           @see #PtrFrameLayout_ptr_keep_header_when_refresh
+           @see #PtrFrameLayout_ptr_pull_to_fresh
+           @see #PtrFrameLayout_ptr_ratio_of_header_height_to_refresh
+           @see #PtrFrameLayout_ptr_resistance
+         */
+        public static final int[] PtrFrameLayout = {
+            0x7f01000d, 0x7f01000e, 0x7f01000f, 0x7f010010,
+            0x7f010011, 0x7f010012, 0x7f010013, 0x7f010014
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_content}
+          attribute's value can be found in the {@link #PtrFrameLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.bruce.funny:ptr_content
+        */
+        public static final int PtrFrameLayout_ptr_content = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_duration_to_close}
+          attribute's value can be found in the {@link #PtrFrameLayout} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.bruce.funny:ptr_duration_to_close
+        */
+        public static final int PtrFrameLayout_ptr_duration_to_close = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_duration_to_close_header}
+          attribute's value can be found in the {@link #PtrFrameLayout} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.bruce.funny:ptr_duration_to_close_header
+        */
+        public static final int PtrFrameLayout_ptr_duration_to_close_header = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_header}
+          attribute's value can be found in the {@link #PtrFrameLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.bruce.funny:ptr_header
+        */
+        public static final int PtrFrameLayout_ptr_header = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_keep_header_when_refresh}
+          attribute's value can be found in the {@link #PtrFrameLayout} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.bruce.funny:ptr_keep_header_when_refresh
+        */
+        public static final int PtrFrameLayout_ptr_keep_header_when_refresh = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_pull_to_fresh}
+          attribute's value can be found in the {@link #PtrFrameLayout} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.bruce.funny:ptr_pull_to_fresh
+        */
+        public static final int PtrFrameLayout_ptr_pull_to_fresh = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_ratio_of_header_height_to_refresh}
+          attribute's value can be found in the {@link #PtrFrameLayout} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.bruce.funny:ptr_ratio_of_header_height_to_refresh
+        */
+        public static final int PtrFrameLayout_ptr_ratio_of_header_height_to_refresh = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#ptr_resistance}
+          attribute's value can be found in the {@link #PtrFrameLayout} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.bruce.funny:ptr_resistance
+        */
+        public static final int PtrFrameLayout_ptr_resistance = 2;
         /** Attributes that can be used with a SwipeBackLayout.
            <p>Includes the following attributes:</p>
            <table>
@@ -475,8 +735,8 @@ containing a value of this type.
            @see #SwipeBackLayout_shadow_right
          */
         public static final int[] SwipeBackLayout = {
-            0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f,
-            0x7f010010
+            0x7f010015, 0x7f010016, 0x7f010017, 0x7f010018,
+            0x7f010019
         };
         /**
           <p>This symbol is the offset where the {@link com.bruce.funny.R.attr#edge_flag}
